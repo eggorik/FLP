@@ -1,0 +1,21 @@
+(car (cdr (cdr (car (cdr '(1 (2 (3 4) *) 5))))))
+
+task 2:
+; список с одним элементом — списком (a (b c))
+
+task 3:
+(print (cons (cons 1 nil) (cons (cons 2 (cons 3 nil)) nil)))
+
+(print (list (list 1) (list 2 3)))
+
+task 4:
+(defun func (lst)
+  (if (and (cdr (cdr lst))          
+           (cdr lst)) 
+      (append
+        (list (car lst)              
+              (car (cdr lst))        
+              (car (last lst)))      
+        (cdr (cdr (cdr lst)))        
+        (list (car (cdr (cdr lst))))) 
+      lst))
